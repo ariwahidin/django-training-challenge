@@ -1,0 +1,44 @@
+{% extends 'layout/layout.html' %}
+{% block title %}
+Books
+{% endblock %}
+{% block page %}
+Books Page
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col col-md-12">
+        <a href="{% url 'book_create' %}" class="btn btn-primary mb-3">Add Book</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Tile</th>
+                    <th>Author</th>
+                    <th>Publised Date</th>
+                    <th>ISBN</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.published_date }}</td>
+                    <td>{{ book.isbn }}</td>
+                    <td>
+                        <a href="{% url 'book_update' book.uuid %}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

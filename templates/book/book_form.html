@@ -1,0 +1,19 @@
+{% extends 'layout/layout.html' %}
+{% block title %}
+Form Book
+{% endblock %}
+{% block page %}
+Form Book Page
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-10">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a href="#" class="btn btn-secondary">Batal</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
