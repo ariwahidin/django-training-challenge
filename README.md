@@ -45,4 +45,7 @@ Berikut adalah beberapa tampilan dari aplikasi ini:
 Ikuti langkah-langkah berikut untuk menjalankan aplikasi ini di lingkungan lokal Anda:
 
 1. Clone repositori ini:
-   git clone https://github.com/ariwahidin/django-master-template.git
+   git clone https://github.com/ariwahidin/django-training-challenge.git
+2. Buat .env di root project, dan masuk ke mode env
+3. Jalankan perintah "pip install -r requirements/dev.txt" untuk update dependency yang dibutuhkan
+4. Jalankan perintah "python manage.py runserver" untuk memulai server
